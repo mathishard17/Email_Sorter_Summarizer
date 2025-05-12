@@ -8,14 +8,14 @@ This project is an email sorting and summarizing tool that integrates with the G
 - **Fetch Recent Emails**: Retrieves recent emails from the user's Gmail account.
 - **Text Cleanup**: Cleans up the email content by removing URLs, signatures, and unnecessary text.
 - **Summarize Emails**: Summarizes the content of emails using OpenAI's GPT model.
-- **Sends Email**: Sends the user an email containing all the summaries and labels.
+- **Sends Email**: Sends the user an email containing all the summaries, labels, and email links.
 
 ## Prerequisites
 
-Before you start, you'll need to have the following installed:
+Before you start, you'll need to have the following:
 
 - Python 3.6 or higher
-- Google API Client Library: make credentials.json file
+- Google API Client Library
 - OpenAI API key
 - A Google Cloud project with Gmail API enabled
 
@@ -28,7 +28,7 @@ Before you start, you'll need to have the following installed:
    cd email-sorter-summarizer
 
 2. **Add API keys**:
-    Add a credential.json file containing Gmail API and .env file with OPENAI_API_KEY = your_token
+    Download the credential.json file from your Google Cloud project containing the Gmail API information. Also add a .env file with OPENAI_API_KEY = your_token.
 
 3. **Run main.py**:
     

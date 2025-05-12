@@ -33,10 +33,8 @@ def create_message(sender, to, subject, body_text):
     return {'raw': raw}
 
 def send_email(body_text, subject):
-    sender = "ejesengls@gmail.com"
-    to = "ejesengls@gmail.com"
-    # current_date = datetime.now().strftime("%m/%d/%Y")
-    # subject = f"Emails for {current_date}"
+    sender = "hi@gmail.com" #update with your email
+    to = "hi@gmail.com" #update with your email
     
 
     service = gmail_authenticate()
@@ -47,5 +45,3 @@ def send_email(body_text, subject):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-
-# send_email("Of course you love money!", "Do you like money?")

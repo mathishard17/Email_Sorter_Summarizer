@@ -14,58 +14,6 @@ from email_sorter import categorize_summary
 from send_email import send_email
 from datetime import datetime, timedelta
 
-# ✅ Load environment variables (for Gmail if needed)
-load_dotenv()
-HF_API_TOKEN = os.getenv("HF_API_KEY")
-
-import os
-import requests
-from dotenv import load_dotenv
-
-# ✅ Load environment variables (for Gmail if needed)
-load_dotenv()
-HF_API_TOKEN = os.getenv("HF_API_KEY")
-
-# Define the function to classify the email
-def classify_email(email_text):
-    # Define the API endpoint for Hugging Face's model
-    api_url = "https://api-inference.huggingface.co/models/valhalla/distilbart-mnli-12-6"
-
-    
-    # Set up the headers, including the API token for authorization
-    headers = {
-        "Authorization": f"Bearer {HF_API_TOKEN}"
-    }
-    
-    # Set up the data for the request
-    data = {
-        "inputs": email_text,
-        "parameters": {
-            "candidate_labels": ["Work", "Money", "School", "Ads", "College", "Other"]
-        }
-    }
-    
-    # Send the POST request to the Hugging Face API
-    response = requests.post(api_url, headers=headers, json=data)
-    
-    # Check if the response was successful (status code 200)
-    if response.status_code == 200:
-        result = response.json()  # Get the JSON result
-        if "labels" in result:
-            return result["labels"][0]  # Return the most likely label
-        else:
-            return "Other"  # Default if no labels found
-    else:
-        # Handle errors
-        print(f"Error: {response.status_code}, {response.text}")
-        return "Error"
-
-# # Example usage
-# email_text = "Do you want to go to college?"
-# category = classify_email(email_text)
-# print(f"Email classified as: {category}")
-
-
 
 def get_labels(service):
     results = service.users().labels().list(userId='me').execute()

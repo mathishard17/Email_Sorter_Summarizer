@@ -30,6 +30,7 @@ Before you start, you'll need to have the following:
    cd email-sorter-summarizer
 
 2. **Add API keys**:
+
     Download the `credentials.json` file from your Google Cloud project containing the Gmail API information.  
     Also add a `.env` file with `OPENAI_API_KEY = your_token`.
 

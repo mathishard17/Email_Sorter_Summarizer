@@ -156,7 +156,7 @@ def classify_all(email_array, service):
 
 
 service = gmail_authenticate()
-email_array = read_recent_emails(service, 6)
+email_array = read_recent_emails(service, 6) # currently reading 6 newest emails
 classify_all(email_array, service)
 
 while True:

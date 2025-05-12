@@ -2,6 +2,8 @@
 
 This project is an email sorting and summarizing tool that integrates with the Gmail API to fetch recent emails and uses OpenAI to summarize them. It enables users to quickly get a brief summary of their email content and sends the user an email of all their recent emails. In particular, this project focuses on the college advertisement emails, since high schoolers like us receive so many of these (annoying) emails!
 
+![Screenshot of Email Output](emailexample.png)
+
 ## Features
 
 - **Gmail Authentication**: Uses OAuth2 to authenticate and interact with the Gmail API.

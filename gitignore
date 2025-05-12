@@ -1,0 +1,10 @@
+# Ignore Gmail OAuth tokens and credentials
+token.json
+credentials.json
+
+# Stuff
+__pycache__/
+.env
+*.pyc
+tempCodeRunnerFile.py
+old/

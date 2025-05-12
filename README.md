@@ -34,9 +34,9 @@ Before you start, you'll need to have the following:
     Also add a `.env` file with `OPENAI_API_KEY = your_token`.
 
 
-3. **Run main.py**:
+3. **Run `main.py`**:
     
-    The file that has everything put together is main.py
+    The file that has everything put together is `main.py`
     During the first run, you will login to your Gmail API account and `token.json` will be created; in the future, you'll be automatically signed in. Everytime you run, it will send an email of the summary and links to your most recent emails. Feel free to change the number of emails it reads and make other adjustments.
 
 ## Credits

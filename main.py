@@ -9,8 +9,8 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from dotenv import load_dotenv
-from gpt_readAndSummarize import summarize_email, gmail_authenticate, read_recent_emails
-from gpt_email_sorter import categorize_summary
+from readAndSummarize import summarize_email, gmail_authenticate, read_recent_emails
+from email_sorter import categorize_summary
 from send_email import send_email
 from datetime import datetime, timedelta
 
@@ -114,7 +114,7 @@ def classify_all(email_array, service):
     for i, (id, subject, body) in enumerate(email_array):
         print(f"Current email {i}: {subject}")
         summarized = summarize_email(subject, body)
-        print(f"summarized: {summarized}")
+        print(f"Summarized: {summarized}")
         label = categorize_summary(summarized)
         print(f"Labelled: {label}")
         gmail_link = f"https://mail.google.com/mail/u/0/#all/{id}"
@@ -133,7 +133,7 @@ def classify_all(email_array, service):
             email_entry = (
                 f"\n📌 Subject: {subject}"
                 f", 🏷️ Label: {label}\n"
-                f"\n📝 Preview: {summarized}"
+                f"📝 Preview: {summarized}"
                 f"\n🔗 View here: {gmail_link}\n"
             )
             labeled_emails[label].append(email_entry)

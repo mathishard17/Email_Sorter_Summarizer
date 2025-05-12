@@ -2,7 +2,7 @@
 token.json
 credentials.json
 
-# Stuff
+# Ignore OpenAI token
 __pycache__/
 .env
 *.pyc

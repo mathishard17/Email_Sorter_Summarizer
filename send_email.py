@@ -8,6 +8,7 @@ from googleapiclient.discovery import build
 from datetime import datetime
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
+email = "hi@gmail.com" # update with your email
 
 def gmail_authenticate():
     creds = None
@@ -33,8 +34,8 @@ def create_message(sender, to, subject, body_text):
     return {'raw': raw}
 
 def send_email(body_text, subject):
-    sender = "hi@gmail.com" #update with your email
-    to = "hi@gmail.com" #update with your email
+    sender = email 
+    to = email 
     
 
     service = gmail_authenticate()

@@ -6,9 +6,12 @@ from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from datetime import datetime
+from dotenv import load_dotenv
 
+
+load_dotenv()
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
-email = "hi@gmail.com" # update with your email
+email = os.getenv("email") # update with your email
 
 def gmail_authenticate():
     creds = None

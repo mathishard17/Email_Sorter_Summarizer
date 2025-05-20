@@ -49,6 +49,14 @@ from datetime import datetime
 from collections import defaultdict
 from datetime import datetime
 
+def archive_email(service, msg_id):
+    """Remove 'INBOX' label to archive the message"""
+    service.users().messages().modify(
+        userId='me',
+        id=msg_id,
+        body={'removeLabelIds': ['INBOX']}
+    ).execute()
+
 def classify_all(email_array, service):
     label_map = get_labels(service) if service else {}
     print("Reading emails...")
@@ -69,6 +77,7 @@ def classify_all(email_array, service):
 
         # Check if the email has the 'College Advertisements' label
         if label == 'College Advertisements':
+            archive_email(service, id) #archives the email
             college_ads.append(
                 f"\n📩 College Advertisement Email #{i + 1}"
                 f", 📌 Subject: {subject}"
@@ -104,7 +113,7 @@ def classify_all(email_array, service):
 
 
 service = gmail_authenticate()
-email_array = read_recent_emails(service, 6) # currently reading 6 newest emails
+email_array = read_recent_emails(service, 10) # currently reading 6 newest emails
 classify_all(email_array, service)
 
 while True:

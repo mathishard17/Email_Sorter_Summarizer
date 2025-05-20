@@ -26,7 +26,7 @@ Before you start, you'll need to have the following:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/email-sorter-summarizer.git
+   git clone https://github.com/mathishard17/email-sorter-summarizer.git
    cd email-sorter-summarizer
 
 2. **Add API keys**:
